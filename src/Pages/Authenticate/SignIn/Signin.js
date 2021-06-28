@@ -15,10 +15,10 @@ import {
 } from "reactstrap"
 
 import firebase from "firebase/app"
-import {UserContext} from "../context/UserContext"
+import {UserContext} from "../../../context/UserContext"
 import {Redirect, Link}  from "react-router-dom";
 import {toast} from "react-toastify";
-import Footer from '../layout/Footer';
+import Footer from '../../../layout/Footer/Footer';
 
 
 const Signin = () => {

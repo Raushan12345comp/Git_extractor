@@ -6,7 +6,7 @@ const UserCard = ({user}) => {
     return (
        <Card className="text-center mt-3 mb-4">
        <a target="_blank" href={user.html_url}>
-       <img src={user.avatar_url}  className="img-thumbnail" />
+       <img src={user.avatar_url ? user.avatar_url : "Images/github-logo.png"} className="img-thumbnail" />
        </a>
            <CardBody>
                <div className="text-info">{user.name}</div>
@@ -25,3 +25,4 @@ const UserCard = ({user}) => {
 }
 
 export default UserCard
+

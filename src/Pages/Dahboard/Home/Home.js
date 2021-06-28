@@ -1,3 +1,4 @@
+
 import React, { useState, useContext, useEffect } from "react";
 import Axios from "axios";
 
@@ -11,10 +12,10 @@ import {
   InputGroupAddon,
 } from "reactstrap";
 
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../../context/UserContext";
 import { toast } from "react-toastify";
-import UserCard from "../Components/UserCard";
-import { Repos } from "../Components/Repos";
+import UserCard from "../../../Components/UserCard/UserCard";
+import { Repos } from "../../../Components/Repos/Repos";
 import { Redirect } from "react-router-dom";
 
 const Home = () => {

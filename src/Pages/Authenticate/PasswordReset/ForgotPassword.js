@@ -19,7 +19,7 @@ import firebase from "firebase/app"
 // import {UserContext} from "../context/UserContext"
 import {Link}  from "react-router-dom";
 import {toast} from "react-toastify";
-import Footer from '../layout/Footer';
+import Footer from '../../../layout/Footer/Footer';
 
 
 const ForgotPassword = () => {
@@ -100,7 +100,7 @@ const ForgotPassword = () => {
                         </CardFooter>
                     </Form>
                     <div className="w-100 text-center  p-3">
-                        <Link to="/signin" className="text-white">Login</Link>
+                        <Link to="/signin" className="text-info">Login</Link>
                     </div>
                 </Card>
             </Col>

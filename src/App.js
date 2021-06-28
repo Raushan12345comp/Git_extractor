@@ -13,16 +13,16 @@ import "firebase/auth"
 // components
 
 
-import Signin from "./Pages/Signin";
-import Signup from "./Pages/Signup";
-import PageNotFound from "./Pages/PageNotFound";
+import Signin from "./Pages/Authenticate/SignIn/Signin";
+import Signup from "./Pages/Authenticate/SignUp/Signup";
+import PageNotFound from "./Pages/Extra/PageNotFound/PageNotFound";
 import { UserContext } from "./context/UserContext";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
+import Footer from "./layout/Footer/Footer";
+import Header from "./layout/Header/Header";
 import firebaseConfig from "./Config/firebaseConfig";
-import Home from "./Pages/Home";
-import ForgotPassowrd from "./Pages/ForgotPassowrd";
-import About from "./Pages/About";
+import Home from "./Pages/Dahboard/Home/Home";
+import ForgotPassowrd from "./Pages/Authenticate/PasswordReset/ForgotPassword";
+import About from "./Pages/Extra/About/About";
 
 // init firebase
 firebase.initializeApp(firebaseConfig)
