@@ -16,7 +16,8 @@ import { UserContext } from "../../../context/UserContext";
 import { toast } from "react-toastify";
 import UserCard from "../../../Components/UserCard/UserCard";
 import { Repos } from "../../../Components/Repos/Repos";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+// import firebase from "firebase/app";
 
 const Home = () => {
   const context = useContext(UserContext);
@@ -42,9 +43,15 @@ const Home = () => {
   //   }
   // }, [])
 
+  
+
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
+
+
+
+  
 
   return (
     <>
@@ -78,10 +85,19 @@ const Home = () => {
             {user ? (
               <Repos repos_url={user.repos_url} />
             ) : (
+
+              <>
+            
               <p style={{marginTop: "150px"}} className="text-white text-center">
                 To be decided what we show to our users in default page when
                 they visit...
               </p>
+
+              <Link to="userbylocation">User By Loaction</Link>
+
+              </>
+
+              
             )}
           </Col>
         </Row>

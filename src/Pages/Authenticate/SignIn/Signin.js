@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import {
     Container, 
     Button,
@@ -55,9 +55,14 @@ const Signin = () => {
         handleSignIn()
     }
 
-  if (context.user?.uid) {
-      return <Redirect to="/" />
-  } 
+   
+  
+
+
+    if (context.user?.uid) {
+        return <Redirect to="/" />
+    }
+
 
   return (
       <>

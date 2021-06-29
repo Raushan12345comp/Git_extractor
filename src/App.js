@@ -23,6 +23,7 @@ import firebaseConfig from "./Config/firebaseConfig";
 import Home from "./Pages/Dahboard/Home/Home";
 import ForgotPassowrd from "./Pages/Authenticate/PasswordReset/ForgotPassword";
 import About from "./Pages/Extra/About/About";
+import UserByLocation from './Pages/Dahboard/Home/UserByLocation/UserByLocation'
 
 // init firebase
 firebase.initializeApp(firebaseConfig)
@@ -32,14 +33,13 @@ const App = () => {
 
   const [user, setUser] = useState(null)
 
-  // const context = useContext(UserContext)
+  const context = useContext(UserContext)
 
 
 
-
+  
 
   const authListner = () => {
-    // e.preventDefault()
     firebase.auth().onAuthStateChanged((user) => {
       if(user) {
 
@@ -51,9 +51,10 @@ const App = () => {
     })
   }
 
+
   useEffect(() => {
-    authListner();
-  }, [user])
+    authListner()
+  }, [])
 
 
 
@@ -71,6 +72,7 @@ const App = () => {
           <Route exact path="/signup" component= {Signup} />
           <Route exact path="/forgot-password" component= {ForgotPassowrd} />
           <Route exact path="/about" component= {About} />
+          <Route exact path="/userbylocation" component= {UserByLocation} />
           <Route exact path="*" component= {PageNotFound} />
         </Switch>
         {/* <Footer /> */}
