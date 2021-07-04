@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 
 // import Footer from '../../../../layout/Footer/Footer'
 
@@ -19,27 +19,25 @@ import {
 import { toast } from "react-toastify";
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from "../../../../context/UserContext";
+import Footer from "../../../../layout/Footer/Footer";
 
-const UserByLocation = () => {
+const UserByRepos = () => {
   const context = useContext(UserContext);
 
   const [query, setQuery] = useState("");
-  const [query1, setQuery1] = useState("");
   const [user, setUser] = useState(null);
 
   const fetchDetails = async () => {
-
-    const url =`https://api.github.com/search/users?q=${query}+in:location&per_page=100&page=${query1}`
-
     try {
-      const { data } = await Axios.get(url);
+      const { data } = await Axios.get(
+        `https://api.github.com/search/repositories?q=${query}`
+      );
       setUser(data);
       console.log({ data });
     } catch (error) {
       toast("Not able to locate user", { type: "error" });
     }
   };
-
 
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
@@ -55,15 +53,7 @@ const UserByLocation = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Please Provide the country name or provide name or username"
-                className="text-white"
-              />
-
-              <Input
-                type="text"
-                value={query1}
-                onChange={(e) => setQuery1(e.target.value)}
-                placeholder="Please Provide the country name or provide name or username"
+                placeholder="Please Provide the repos language"
                 className="text-white"
               />
 
@@ -90,17 +80,17 @@ const UserByLocation = () => {
                           <a
                             style={{ marginTop: "10px" }}
                             target="_blank"
-                            href={element.html_url}
+                            // href={element.html_url}
                           >
                             <img
 
                               width="200"
                               height="200"
                               className="img-thumbnail"
-                              src={element.avatar_url}
+                              src={element.name}
                             ></img>
                             <CardBody>
-                              <div className="text-info">{element.type}</div>
+                              <div className="text-info">{element.full_name}</div>
                             </CardBody>
                           </a>
                         </li>
@@ -117,8 +107,9 @@ const UserByLocation = () => {
           </div>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };
 
-export default UserByLocation;
+export default UserByRepos;

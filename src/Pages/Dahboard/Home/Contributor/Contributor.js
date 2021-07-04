@@ -20,16 +20,17 @@ import { toast } from "react-toastify";
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from "../../../../context/UserContext";
 
-const UserByLocation = () => {
+const Contributor = () => {
   const context = useContext(UserContext);
 
-  const [query, setQuery] = useState("");
   const [query1, setQuery1] = useState("");
+  const [query2, setQuery2] = useState("");
   const [user, setUser] = useState(null);
 
   const fetchDetails = async () => {
+      
 
-    const url =`https://api.github.com/search/users?q=${query}+in:location&per_page=100&page=${query1}`
+    const url = `https://api.github.com/repos/${query1}/${query2}/stats/contributors`
 
     try {
       const { data } = await Axios.get(url);
@@ -53,19 +54,26 @@ const UserByLocation = () => {
             <InputGroup>
               <Input
                 type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Please Provide the country name or provide name or username"
-                className="text-white"
-              />
-
-              <Input
-                type="text"
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Please Provide the country name or provide name or username"
                 className="text-white"
               />
+               <Input
+                type="text"
+                value={query2}
+                onChange={(e) => setQuery2(e.target.value)}
+                placeholder="Please Provide the country name or provide name or username"
+                className="text-white"
+              />
+
+              {/* <Input
+                type="text"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                placeholder="Please Provide the date in yyyy-mm-day"
+                className="text-white"
+              /> */}
 
               <InputGroupAddon addonType="append">
                 <Button onClick={fetchDetails} color="primary">
@@ -75,7 +83,7 @@ const UserByLocation = () => {
             </InputGroup>
           </Col>
           <div>
-            <div style={{display: "flex"}}>
+            {/* <div style={{display: "flex"}}>
               {user ? (
                 <div style={{ display:"flex", flexWrap: "wrap"}}>
                   {user.items.map((element, index) => {
@@ -113,7 +121,7 @@ const UserByLocation = () => {
                   Raushan Kumar
                 </h1>
               )}
-            </div>
+            </div> */}
           </div>
         </Row>
       </Container>
@@ -121,4 +129,4 @@ const UserByLocation = () => {
   );
 };
 
-export default UserByLocation;
+export default Contributor;

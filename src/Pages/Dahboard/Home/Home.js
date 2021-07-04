@@ -1,4 +1,3 @@
-
 import React, { useState, useContext, useEffect } from "react";
 import Axios from "axios";
 
@@ -43,15 +42,9 @@ const Home = () => {
   //   }
   // }, [])
 
-  
-
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
-
-
-
-  
 
   return (
     <>
@@ -76,7 +69,10 @@ const Home = () => {
             {user ? (
               <UserCard user={user} />
             ) : (
-              <p style={{marginTop: "100px"}} className="text-white text-center pt-20">
+              <p
+                style={{ marginTop: "100px" }}
+                className="text-white text-center pt-20"
+              >
                 Github Image... decide and create attractive design of github
               </p>
             )}
@@ -85,19 +81,28 @@ const Home = () => {
             {user ? (
               <Repos repos_url={user.repos_url} />
             ) : (
-
               <>
-            
-              <p style={{marginTop: "150px"}} className="text-white text-center">
-                To be decided what we show to our users in default page when
-                they visit...
-              </p>
+                <p
+                  style={{ marginTop: "150px" }}
+                  className="text-white text-center"
+                >
+                  To be decided what we show to our users in default page when
+                  they visit...
+                </p>
 
-              <Link to="userbylocation">User By Loaction</Link>
+                <Link to="userbylocation">User By Loaction</Link>
+                <div>
+                  <Link to="userbyrepos">User By Repos</Link>
+                </div>
+                <div>
+                  <Link to="userbycommits">User By Commits</Link>
+                </div>
+
+                <div>
+                  <Link to="contributors">Contributor</Link>
+                </div>
 
               </>
-
-              
             )}
           </Col>
         </Row>

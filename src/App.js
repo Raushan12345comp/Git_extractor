@@ -24,6 +24,10 @@ import Home from "./Pages/Dahboard/Home/Home";
 import ForgotPassowrd from "./Pages/Authenticate/PasswordReset/ForgotPassword";
 import About from "./Pages/Extra/About/About";
 import UserByLocation from './Pages/Dahboard/Home/UserByLocation/UserByLocation'
+import UserByRepos from "./Pages/Dahboard/Home/UserByRepos/UserByRepos";
+import UserByCommits from "./Pages/Dahboard/Home/UserByCommits/UserByCommits";
+import Contributor from "./Pages/Dahboard/Home/Contributor/Contributor";
+
 
 // init firebase
 firebase.initializeApp(firebaseConfig)
@@ -73,6 +77,9 @@ const App = () => {
           <Route exact path="/forgot-password" component= {ForgotPassowrd} />
           <Route exact path="/about" component= {About} />
           <Route exact path="/userbylocation" component= {UserByLocation} />
+          <Route exact path="/userbyrepos" component= {UserByRepos} />
+          <Route exact path="/userbycommits" component= {UserByCommits} />
+          <Route exact path="/contributors" component= {Contributor} />
           <Route exact path="*" component= {PageNotFound} />
         </Switch>
         {/* <Footer /> */}
