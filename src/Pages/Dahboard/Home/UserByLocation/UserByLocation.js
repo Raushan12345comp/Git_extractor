@@ -26,10 +26,10 @@ const UserByLocation = () => {
   const [query, setQuery] = useState("");
   const [query1, setQuery1] = useState("");
   const [user, setUser] = useState(null);
+  const [language, setLanguage] = useState(null);
 
   const fetchDetails = async () => {
-
-    const url =`https://api.github.com/search/users?q=${query}+in:location&per_page=100&page=${query1}`
+    const url = `https://api.github.com/search/users?q=location:${query}+language:${language} &per_page=100&page=${query1}`;
 
     try {
       const { data } = await Axios.get(url);
@@ -40,14 +40,13 @@ const UserByLocation = () => {
     }
   };
 
-
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
 
   return (
     <>
-      <Container style={{marginTop: "80px"}} >
+      <Container style={{ marginTop: "80px" }}>
         <Row className=" mt-3">
           <Col md="12">
             <InputGroup>
@@ -55,7 +54,15 @@ const UserByLocation = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Please Provide the country name or provide name or username"
+                placeholder="Please Provide the country name"
+                className="text-white"
+              />
+
+              <Input
+                type="text"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                placeholder="enter language"
                 className="text-white"
               />
 
@@ -63,7 +70,7 @@ const UserByLocation = () => {
                 type="text"
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
-                placeholder="Please Provide the country name or provide name or username"
+                placeholder="Enter the page no."
                 className="text-white"
               />
 
@@ -75,32 +82,33 @@ const UserByLocation = () => {
             </InputGroup>
           </Col>
           <div>
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               {user ? (
-                <div style={{ display:"flex", flexWrap: "wrap"}}>
-                  {user.items.map((element, index) => {
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                  {user.items.map((element) => {
                     return (
-                      <div
-                        className="text-center mt-3 mb-4"
-                      >
-                        <li 
-                        style={{display: "flex" , flexDirection: "row", margin: "20px"}}
-                        
-                        key={index}>
+                      <div className="text-center mt-3 mb-4">
+                        <li
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            margin: "20px",
+                          }}
+                          // key={index}
+                        >
                           <a
                             style={{ marginTop: "10px" }}
                             target="_blank"
                             href={element.html_url}
                           >
                             <img
-
                               width="200"
                               height="200"
                               className="img-thumbnail"
                               src={element.avatar_url}
                             ></img>
                             <CardBody>
-                              <div className="text-info">{element.type}</div>
+                              <div className="text-info">{element.login}</div>
                             </CardBody>
                           </a>
                         </li>
