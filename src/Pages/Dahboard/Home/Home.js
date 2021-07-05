@@ -80,30 +80,7 @@ const Home = () => {
           <Col md="7">
             {user ? (
               <Repos repos_url={user.repos_url} />
-            ) : (
-              <>
-                <p
-                  style={{ marginTop: "150px" }}
-                  className="text-white text-center"
-                >
-                  To be decided what we show to our users in default page when
-                  they visit...
-                </p>
-
-                <Link to="userbylocation">User By Loaction</Link>
-                <div>
-                  <Link to="userbyrepos">User By Repos</Link>
-                </div>
-                <div>
-                  <Link to="userbycommits">User By Commits</Link>
-                </div>
-
-                <div>
-                  <Link to="contributors">Contributor</Link>
-                </div>
-
-              </>
-            )}
+            ) : (null)}
           </Col>
         </Row>
       </Container>

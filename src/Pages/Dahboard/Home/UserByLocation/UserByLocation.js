@@ -69,6 +69,7 @@ const UserByLocation = () => {
               <Input
                 type="text"
                 value={query1}
+                text="1"
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Enter the page no."
                 className="text-white"
@@ -85,7 +86,7 @@ const UserByLocation = () => {
             <div style={{ display: "flex" }}>
               {user ? (
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
-                  {user.items.map((element) => {
+                  {user.items.map((element, index) => {
                     return (
                       <div className="text-center mt-3 mb-4">
                         <li
@@ -94,9 +95,9 @@ const UserByLocation = () => {
                             flexDirection: "row",
                             margin: "20px",
                           }}
-                          // key={index}
+                          key={index}
                         >
-                          <a
+                          <Link to="/"
                             style={{ marginTop: "10px" }}
                             target="_blank"
                             href={element.html_url}
@@ -110,7 +111,7 @@ const UserByLocation = () => {
                             <CardBody>
                               <div className="text-info">{element.login}</div>
                             </CardBody>
-                          </a>
+                          </Link>
                         </li>
                       </div>
                     );
