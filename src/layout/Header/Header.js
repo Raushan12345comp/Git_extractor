@@ -44,7 +44,7 @@ const Header = () => {
           {context.user ? (
             <>
             <NavItem>
-              <NavLink tag={Link} to="/signin" onClick= {() => handleLogout(context.setUser(null))} className="text-white">
+              <NavLink tag={Link} to="/" onClick= {() => handleLogout(context.setUser(null))} className="text-white">
                 Logout
               </NavLink>
             </NavItem>
