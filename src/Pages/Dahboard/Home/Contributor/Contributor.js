@@ -28,9 +28,7 @@ const Contributor = () => {
   const [user, setUser] = useState(null);
 
   const fetchDetails = async () => {
-      
-
-    const url = `https://api.github.com/repos/${query1}/${query2}/stats/contributors`
+    const url = `https://api.github.com/repos/${query1}/${query2}/stats/contributors`;
 
     try {
       const { data } = await Axios.get(url);
@@ -41,14 +39,13 @@ const Contributor = () => {
     }
   };
 
-
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
 
   return (
     <>
-      <Container style={{marginTop: "80px"}} >
+      <Container style={{ marginTop: "80px" }}>
         <Row className=" mt-3">
           <Col md="12">
             <InputGroup>
@@ -59,7 +56,7 @@ const Contributor = () => {
                 placeholder="Please Provide the username"
                 className="text-white"
               />
-               <Input
+              <Input
                 type="text"
                 value={query2}
                 onChange={(e) => setQuery2(e.target.value)}
@@ -83,32 +80,41 @@ const Contributor = () => {
             </InputGroup>
           </Col>
           <div>
-            {/* <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               {user ? (
-                <div style={{ display:"flex", flexWrap: "wrap"}}>
-                  {user.items.map((element, index) => {
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                  {user.map((element, index) => {
                     return (
-                      <div
-                        className="text-center mt-3 mb-4"
-                      >
-                        <li 
-                        style={{display: "flex" , flexDirection: "row", margin: "20px"}}
-                        
-                        key={index}>
+                      <div className="text-center mt-3 mb-4">
+                        <li
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            margin: "20px",
+                          }}
+                          key={index}
+                        >
                           <a
                             style={{ marginTop: "10px" }}
                             target="_blank"
-                            href={element.html_url}
+                            href={element.author.html_url}
                           >
                             <img
-
                               width="200"
                               height="200"
                               className="img-thumbnail"
-                              src={element.avatar_url}
+                              src={element.author.avatar_url}
                             ></img>
                             <CardBody>
-                              <div className="text-info">{element.type}</div>
+                              <div className="text-info">
+                                {element.author.login}
+                              </div>
+                            
+                              
+                              
+                              <div className="text-info">
+                                {element.author.type}
+                              </div>
                             </CardBody>
                           </a>
                         </li>
@@ -121,7 +127,7 @@ const Contributor = () => {
                   Raushan Kumar
                 </h1>
               )}
-            </div> */}
+            </div>
           </div>
         </Row>
       </Container>

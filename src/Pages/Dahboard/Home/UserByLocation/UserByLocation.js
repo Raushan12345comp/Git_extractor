@@ -29,7 +29,7 @@ const UserByLocation = () => {
   const [language, setLanguage] = useState(null);
 
   const fetchDetails = async () => {
-    const url = `https://api.github.com/search/users?q=location:${query}+language:${language} &per_page=100&page=${query1}`;
+    const url = `https://api.github.com/search/users?q=location:${query}+language:${language} &per_page=40&page=${query1}`;
 
     try {
       const { data } = await Axios.get(url);
@@ -97,7 +97,7 @@ const UserByLocation = () => {
                           }}
                           key={index}
                         >
-                          <Link to="/"
+                          <a
                             style={{ marginTop: "10px" }}
                             target="_blank"
                             href={element.html_url}
@@ -111,7 +111,7 @@ const UserByLocation = () => {
                             <CardBody>
                               <div className="text-info">{element.login}</div>
                             </CardBody>
-                          </Link>
+                          </a>
                         </li>
                       </div>
                     );

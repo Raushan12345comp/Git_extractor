@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 // import Footer from '../../../../layout/Footer/Footer'
 
@@ -25,12 +25,13 @@ const UserByRepos = () => {
   const context = useContext(UserContext);
 
   const [query, setQuery] = useState("");
+  const [page, setPage] = useState("");
   const [user, setUser] = useState(null);
 
   const fetchDetails = async () => {
     try {
       const { data } = await Axios.get(
-        `https://api.github.com/search/repositories?q=${query}`
+        `https://api.github.com/search/repositories?q=${query}&per_page=40&page=${page}`
       );
       setUser(data);
       console.log({ data });
@@ -45,7 +46,7 @@ const UserByRepos = () => {
 
   return (
     <>
-      <Container style={{marginTop: "80px"}} >
+      <Container style={{ marginTop: "80px" }}>
         <Row className=" mt-3">
           <Col md="12">
             <InputGroup>
@@ -57,6 +58,14 @@ const UserByRepos = () => {
                 className="text-white"
               />
 
+              <Input
+                type="text"
+                value={page}
+                onChange={(e) => setPage(e.target.value)}
+                placeholder="Enter the page no."
+                className="text-white"
+              />
+
               <InputGroupAddon addonType="append">
                 <Button onClick={fetchDetails} color="primary">
                   Fetch User
@@ -65,32 +74,40 @@ const UserByRepos = () => {
             </InputGroup>
           </Col>
           <div>
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               {user ? (
-                <div style={{ display:"flex", flexWrap: "wrap"}}>
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
                   {user.items.map((element, index) => {
                     return (
-                      <div
-                        className="text-center mt-3 mb-4"
-                      >
-                        <li 
-                        style={{display: "flex" , flexDirection: "row", margin: "20px"}}
-                        
-                        key={index}>
+                      <div className="text-center mt-3 mb-4">
+                        <li
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            margin: "20px",
+                          }}
+                          key={index}
+                        >
                           <a
                             style={{ marginTop: "10px" }}
                             target="_blank"
-                            // href={element.html_url}
+                            href={element.owner.html_url}
                           >
                             <img
-
                               width="200"
                               height="200"
                               className="img-thumbnail"
-                              src={element.name}
+                              src={element.owner.avatar_url}
                             ></img>
                             <CardBody>
-                              <div className="text-info">{element.full_name}</div>
+                              <div className="text-info">
+                                <p>{element.owner.login}</p>
+                                <p>{element.name}</p>
+                                <p>Forks: {element.forks}</p>
+                                <p>Open issues: {element.open_issues}</p>
+                                <p>Watchers: {element.watchers}</p>
+
+                              </div>
                             </CardBody>
                           </a>
                         </li>
