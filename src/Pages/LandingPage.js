@@ -30,6 +30,10 @@ const LandingPage = () => {
                   <Link to="contributors">contributor</Link>
                 </div>
 
+                <div>
+                  <Link to="repos">user all repos</Link>
+                </div>
+
         </div>
     )
 }

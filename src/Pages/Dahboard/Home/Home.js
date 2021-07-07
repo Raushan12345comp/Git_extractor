@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import Axios from "axios";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 import {
   Row,
@@ -42,6 +44,10 @@ const Home = () => {
   //   }
   // }, [])
 
+  const username = () => {
+    toast("username copied")
+  }
+
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
@@ -67,7 +73,18 @@ const Home = () => {
               </InputGroupAddon>
             </InputGroup>
             {user ? (
+              <>
               <UserCard user={user} />
+              <div>
+              <Link to="repos">
+              <CopyToClipboard text={user.login}>
+              <button onClick={username}>view all repos</button>
+
+              </CopyToClipboard>
+              </Link>
+              
+              </div>
+              </>
             ) : (
               <p
                 style={{ marginTop: "100px" }}

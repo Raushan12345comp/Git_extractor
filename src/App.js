@@ -28,6 +28,8 @@ import UserByRepos from "./Pages/Dahboard/Home/UserByRepos/UserByRepos";
 import UserByCommits from "./Pages/Dahboard/Home/UserByCommits/UserByCommits";
 import Contributor from "./Pages/Dahboard/Home/Contributor/Contributor";
 import LandingPage from "./Pages/LandingPage";
+import UserRepos from "./Components/Repos/UserRepos.js/UserRepos";
+
 
 // init firebase
 firebase.initializeApp(firebaseConfig)
@@ -80,6 +82,7 @@ const App = () => {
           <Route exact path="/userbyrepos" component= {UserByRepos} />
           <Route exact path="/userbycommits" component= {UserByCommits} />
           <Route exact path="/contributors" component= {Contributor} />
+          <Route exact path="/repos" component= {UserRepos} />
           <Route exact path="/" component= {LandingPage} />
           <Route exact path="*" component= {PageNotFound} />
         </Switch>

@@ -9,6 +9,7 @@ const UserCard = ({user}) => {
        <img src={user.avatar_url ? user.avatar_url : "Images/github-logo.png"} className="img-thumbnail" />
        </a>
            <CardBody>
+               <div className="text-info">{user.login}</div>
                <div className="text-info">{user.name}</div>
                <div className="text-primary">{user.location}</div>
                <div className="text-primary">{user.bio}</div>

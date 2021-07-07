@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 
 // import Footer from '../../../../layout/Footer/Footer'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 import Axios from "axios";
 
@@ -19,6 +21,7 @@ import {
 import { toast } from "react-toastify";
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from "../../../../context/UserContext";
+import Home from "../Home";
 
 const UserByLocation = () => {
   const context = useContext(UserContext);
@@ -42,6 +45,10 @@ const UserByLocation = () => {
 
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
+  }
+
+  const username = () => {
+    toast("username copied paste it to see the details...")
   }
 
   return (
@@ -111,6 +118,14 @@ const UserByLocation = () => {
                             <CardBody>
                               <div className="text-info">{element.login}</div>
                             </CardBody>
+                            <Link exact to="home">
+                            <CopyToClipboard text={element.login}>
+                              <button onClick={username}>see user details</button>
+                            </CopyToClipboard>
+                        
+                            </Link>
+                           
+                            
                           </a>
                         </li>
                       </div>
