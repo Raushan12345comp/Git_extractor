@@ -8,7 +8,7 @@ const Footer = () => {
     <Container
       fluid
       tag="footer"
-      className="text-center bg-secondary text-white text-uppercase fixed-bottom p-3 mt-2 border-top border-primary"
+      className="text-center text-uppercase fixed-bottom p-3 mt-2 border-top border-primary"
     >
       <div >
         Connect with us..

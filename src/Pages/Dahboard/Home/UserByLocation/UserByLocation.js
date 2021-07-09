@@ -62,7 +62,7 @@ const UserByLocation = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please Provide the country name"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
@@ -70,16 +70,17 @@ const UserByLocation = () => {
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
                 placeholder="enter language"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
-                type="text"
+                type="number"
+                min="1"
+                
                 value={query1}
-                text="1"
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Enter the page no."
-                className="text-white"
+                // className="text-white"
               />
 
               <InputGroupAddon addonType="append">
@@ -120,7 +121,7 @@ const UserByLocation = () => {
                             </CardBody>
                             <Link exact to="home">
                             <CopyToClipboard text={element.login}>
-                              <button onClick={username}>see user details</button>
+                              <button className="text-white" onClick={username}>see user details</button>
                             </CopyToClipboard>
                         
                             </Link>

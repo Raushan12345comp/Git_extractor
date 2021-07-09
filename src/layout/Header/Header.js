@@ -31,11 +31,11 @@ const Header = () => {
   return (
     <Navbar className="border-bottom border-primary p-2  fixed-top" light expand="md">
       <NavbarBrand>
-        <Link to="/" className="text-white p-2">
+        <Link to="/" className=" p-2">
           Git Extractor
         </Link>
       </NavbarBrand>
-      <NavbarText className="text-white">
+      <NavbarText>
         {context.user?.email ? context.user.email : ''}
       </NavbarText>
       <NavbarToggler onClick={toggle} />
@@ -44,17 +44,17 @@ const Header = () => {
           {context.user ? (
             <>
             <NavItem>
-              <NavLink tag={Link} to="/" onClick= {() => handleLogout(context.setUser(null))} className="text-white">
+              <NavLink tag={Link} to="/" onClick= {() => handleLogout(context.setUser(null))} >
                 Logout
               </NavLink>
             </NavItem>
             <NavItem>
-            <NavLink tag={Link} to="/" className="text-white">
+            <NavLink tag={Link} to="/" >
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
-            <NavLink tag={Link} to="/about" className="text-white">
+            <NavLink tag={Link} to="/about">
                 About
               </NavLink>
             </NavItem>
@@ -64,17 +64,17 @@ const Header = () => {
           ) : (
             <>
               <NavItem>
-                <NavLink tag={Link} to="/signup" className="text-white">
+                <NavLink tag={Link} to="/signup" >
                   Signup
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/signin" className="text-white">
+                <NavLink tag={Link} to="/signin" >
                   Signin
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/about" className="text-white">
+                <NavLink tag={Link} to="/about" >
                   About
                 </NavLink>
               </NavItem>

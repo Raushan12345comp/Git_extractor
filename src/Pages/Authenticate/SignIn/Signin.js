@@ -71,10 +71,10 @@ const Signin = () => {
             <Col lg={6} className='offset-lg-3 mt-5'>
                 <Card>
                     <Form onSubmit={handleSubmit}>
-                        <CardHeader className='text-white'>Signin here</CardHeader>
+                        <CardHeader >Signin here</CardHeader>
                         <CardBody>
                             <FormGroup row className="mb-3">
-                                <Label for='email' className="text-white" sm={3} >
+                                <Label for='email' sm={3} >
                                     Email
                                 </Label>
                                 <Col sm={9}>
@@ -86,12 +86,12 @@ const Signin = () => {
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         required
-                                        className="text-white"
+                                        // className="text-white"
                                     />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label for='password' className="text-white" sm={3}>
+                                <Label for='password' sm={3}>
                                     Password
                                 </Label>
                                 <Col sm={9}>
@@ -103,7 +103,7 @@ const Signin = () => {
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                         required
-                                        className="text-white"
+                                        // className="text-white"
 
                                     />
                                 </Col>
@@ -120,7 +120,7 @@ const Signin = () => {
                     </div>
                 </Card>
             </Col>
-            <div className="w-100 text-center mt-2 text-white">
+            <div className="w-100 text-center mt-2">
                 Need an account? <Link to="/signup" className="text-info">Sign up</Link>
             </div>
         </Row>

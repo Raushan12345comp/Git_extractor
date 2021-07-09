@@ -63,7 +63,7 @@ const Home = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please provide the username"
-                className="text-white"
+                // className="text-white"
               />
 
               <InputGroupAddon addonType="append">
@@ -78,7 +78,7 @@ const Home = () => {
               <div>
               <Link to="repos">
               <CopyToClipboard text={user.login}>
-              <button onClick={username}>view all repos</button>
+              <button  onClick={username}>view all repos</button>
 
               </CopyToClipboard>
               </Link>

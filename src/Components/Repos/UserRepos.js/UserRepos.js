@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import {
@@ -12,8 +12,14 @@ import {
   CardBody,
   card
 } from "reactstrap";
+import { UserContext } from "../../../context/UserContext";
+import { Redirect } from "react-router-dom";
 
 const UserRepos = () => {
+
+  const context = useContext(UserContext);
+
+
   const [query, setQuery] = useState("");
   const [page, setPage] = useState("");
 
@@ -27,9 +33,13 @@ const UserRepos = () => {
     console.log(data);
   };
 
+  if (!context.user?.uid) {
+    return <Redirect to="/signin" />;
+  } 
+
   // useEffect(() => {
   //     fetchRepos()
-  // }, [repos_url])
+  // }, [])
 
   return (
     <>
@@ -42,15 +52,16 @@ const UserRepos = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please provide the username"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
-                type="text"
+                type="number"
+                min="1"
                 value={page}
                 onChange={(e) => setPage(e.target.value)}
                 placeholder="Enter the page no."
-                className="text-white"
+                // className="text-white"
               />
 
               <InputGroupAddon addonType="append">

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const LandingPage = () => {
     return (
         <div style={{marginTop: "100px", marginLeft: "50px"}}>
-            <h1 className="text-white">This is the landing Page</h1>
+            <h1>This is the landing Page</h1>
             <p
                   style={{ marginTop: "150px"}}
                   className="text-white text-center"
@@ -15,7 +15,7 @@ const LandingPage = () => {
                 </p>
 
                 <Link to="home">Search By username</Link>
-                <div>
+                {/* <div>
                   <Link to="userbyrepos">User By Repos</Link>
                 </div>
                 <div>
@@ -32,7 +32,7 @@ const LandingPage = () => {
 
                 <div>
                   <Link to="repos">user all repos</Link>
-                </div>
+                </div> */}
 
         </div>
     )

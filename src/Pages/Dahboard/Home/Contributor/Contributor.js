@@ -54,14 +54,14 @@ const Contributor = () => {
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Please Provide the username"
-                className="text-white"
+                // className="text-white"
               />
               <Input
                 type="text"
                 value={query2}
                 onChange={(e) => setQuery2(e.target.value)}
                 placeholder="Please Provide the repositories name"
-                className="text-white"
+                // className="text-white"
               />
 
               {/* <Input
