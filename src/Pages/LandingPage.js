@@ -13,6 +13,9 @@ const LandingPage = () => {
                   To be decided what we show to our users in default page when
                   they visit...
                 </p>
+                <div>
+                  <img width="400px" height="400px" src="Images/gif.gif"></img>
+                </div>
 
                 <Link to="home">Search By username</Link>
                 <div>

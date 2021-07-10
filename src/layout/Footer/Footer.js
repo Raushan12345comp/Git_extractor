@@ -12,13 +12,13 @@ const Footer = () => {
     >
       <div >
         Connect with us..
-        <a style={{marginLeft: "50px", fontSize: "20px"}} target="_blank" href="https://www.facebook.com/profile.php?id=100011469290257" >
+        <a style={{marginLeft: "50px", fontSize: "20px"}} target="_blank" href="https://www.facebook.com/Git-Extractor-107399428283927" >
           <FaFacebook />
         </a>
-        <a target="_blank" style={{marginLeft: "50px", fontSize: "20px"}} href="https://www.instagram.com/raushan7406/?hl=en">
+        <a target="_blank" style={{marginLeft: "50px", fontSize: "20px"}} href="https://www.instagram.com/git_extractor/">
           <FaInstagramSquare />
         </a>
-        <a target="_blank" style={{marginLeft: "50px", fontSize: "20px"}} href="https://twitter.com/Raushan38854836">
+        <a target="_blank" style={{marginLeft: "50px", fontSize: "20px"}} href="https://twitter.com/home">
           <FaTwitter />
         </a>
         </div>

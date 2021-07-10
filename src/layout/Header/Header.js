@@ -14,6 +14,8 @@ import { Link } from 'react-router-dom';
 
 import { UserContext } from '../../context/UserContext';
 import firebase from 'firebase/app';
+import Contact from '../../Pages/Contact/Contact';
+
 
 
 const handleLogout = () => {
@@ -58,6 +60,12 @@ const Header = () => {
                 About
               </NavLink>
             </NavItem>
+            <NavItem>
+            <NavLink tag={Link} to="/contact">
+                Contact
+              </NavLink>
+            </NavItem>
+            
 
             </>
             
@@ -76,6 +84,11 @@ const Header = () => {
               <NavItem>
                 <NavLink tag={Link} to="/about" >
                   About
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/contact">
+                  Contact
                 </NavLink>
               </NavItem>
             </>

@@ -29,6 +29,7 @@ import UserByCommits from "./Pages/Dahboard/Home/UserByCommits/UserByCommits";
 import Contributor from "./Pages/Dahboard/Home/Contributor/Contributor";
 import LandingPage from "./Pages/LandingPage";
 import UserRepos from "./Components/Repos/UserRepos.js/UserRepos";
+import Contact from "./Pages/Contact/Contact";
 
 
 // init firebase
@@ -78,6 +79,7 @@ const App = () => {
           <Route exact path="/signup" component= {Signup} />
           <Route exact path="/forgot-password" component= {ForgotPassowrd} />
           <Route exact path="/about" component= {About} />
+          <Route exact path="/contact" component= {Contact} />
           <Route exact path="/userbylocation" component= {UserByLocation} />
           <Route exact path="/userbyrepos" component= {UserByRepos} />
           <Route exact path="/userbycommits" component= {UserByCommits} />
