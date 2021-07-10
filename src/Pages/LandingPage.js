@@ -8,14 +8,14 @@ const LandingPage = () => {
             <h1>This is the landing Page</h1>
             <p
                   style={{ marginTop: "150px"}}
-                  className="text-white text-center"
+                  className="text-center"
                 >
                   To be decided what we show to our users in default page when
                   they visit...
                 </p>
 
                 <Link to="home">Search By username</Link>
-                {/* <div>
+                <div>
                   <Link to="userbyrepos">User By Repos</Link>
                 </div>
                 <div>
@@ -32,7 +32,7 @@ const LandingPage = () => {
 
                 <div>
                   <Link to="repos">user all repos</Link>
-                </div> */}
+                </div>
 
         </div>
     )
