@@ -20,6 +20,7 @@ import firebase from "firebase/app"
 import {Link}  from "react-router-dom";
 import {toast} from "react-toastify";
 import Footer from '../../../layout/Footer/Footer';
+import './forgotpassword.css'
 
 
 const ForgotPassword = () => {
@@ -65,12 +66,12 @@ const ForgotPassword = () => {
 
   return (
       <>
-    <Container className='text-center' style={{marginTop: "80px"}}>
+    <Container className='text-center auth-cont'>
         <Row>
             <Col lg={6} className='offset-lg-3 mt-5'>
                 <Card>
                     <Form onSubmit={handleSubmit}>
-                        <CardHeader >Password Reset</CardHeader>
+                        <CardHeader className="auth-card-header">PASSWORD RESET</CardHeader>
                         <CardBody>
 
                 {/* {message && <Alert variant="danger">{message}</Alert>} */}
@@ -87,25 +88,25 @@ const ForgotPassword = () => {
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         required
-                                        // className="text-white"
+                                        className="text-white"
 
                                     />
                                 </Col>
                             </FormGroup>
                         </CardBody>
                         <CardFooter>
-                            <Button type='submit' block color='primary'>
-                                Reset Password
+                            <Button type="submit" className='auth-btn'>
+                                Confirm
                             </Button>
                         </CardFooter>
                     </Form>
                     <div className="w-100 text-center  p-3">
-                        <Link to="/signin" className="text-info">Login</Link>
+                        <Link to="/signin" className="auth-link">Login</Link>
                     </div>
                 </Card>
             </Col>
             <div className="w-100 text-center mt-2">
-                Need an account? <Link to="/signup" className="text-info">Sign up</Link>
+                Need an account? <Link to="/signup" className='auth-link'>Sign up</Link>
             </div>
         </Row>
     </Container>

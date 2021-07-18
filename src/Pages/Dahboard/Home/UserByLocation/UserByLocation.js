@@ -21,8 +21,7 @@ import {
 import { toast } from "react-toastify";
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from "../../../../context/UserContext";
-import Home from "../Home";
-
+import cell from '../../../../img/cell.svg'
 const UserByLocation = () => {
   const context = useContext(UserContext);
 
@@ -53,16 +52,16 @@ const UserByLocation = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "80px" }}>
+      <Container style={{ marginTop: "50px", marginBottom: '100px' }}>
         <Row className=" mt-3">
-          <Col md="12">
+          <Col md="10">
             <InputGroup>
               <Input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please Provide the country name"
-                // className="text-white"
+                className="text-white"
               />
 
               <Input
@@ -70,7 +69,7 @@ const UserByLocation = () => {
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
                 placeholder="enter language"
-                // className="text-white"
+                className="text-white"
               />
 
               <Input
@@ -80,11 +79,11 @@ const UserByLocation = () => {
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Enter the page no."
-                // className="text-white"
+                className="text-white"
               />
 
               <InputGroupAddon addonType="append">
-                <Button onClick={fetchDetails} color="primary">
+                <Button onClick={fetchDetails} className="auth-btn">
                   Fetch User
                 </Button>
               </InputGroupAddon>
@@ -109,6 +108,7 @@ const UserByLocation = () => {
                             style={{ marginTop: "10px" }}
                             target="_blank"
                             href={element.html_url}
+                            style={{textDecoration: 'none'}}
                           >
                             <img
                               width="200"
@@ -117,11 +117,11 @@ const UserByLocation = () => {
                               src={element.avatar_url}
                             ></img>
                             <CardBody>
-                              <div className="text-info">{element.login}</div>
+                              <div className="auth-card-header">{element.login}</div>
                             </CardBody>
                             <Link exact to="home">
                             <CopyToClipboard text={element.login}>
-                              <button className="text-white" onClick={username}>see user details</button>
+                              <button className="auth-btn" onClick={username}>user details</button>
                             </CopyToClipboard>
                         
                             </Link>
@@ -134,9 +134,12 @@ const UserByLocation = () => {
                   })}
                 </div>
               ) : (
-                <h1 className="text-white" style={{ marginTop: "130px" }}>
-                  Raushan Kumar
-                </h1>
+                <p
+                style={{ marginTop: "100px" , paddingLeft: "100px"}}
+                className="text-white text-center pt-20"
+              >
+                <img src={cell} height= "400vh"></img>
+              </p>
               )}
             </div>
           </div>

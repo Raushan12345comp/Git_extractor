@@ -20,6 +20,8 @@ import { UserContext } from "../../../context/UserContext";
 import { Redirect, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Footer from "../../../layout/Footer/Footer";
+import '../PasswordReset/forgotpassword.css'
+
 
 const Signup = () => {
   const context = useContext(UserContext);
@@ -69,17 +71,17 @@ const Signup = () => {
 
   return (
     <>
-    <Container className="text-center" style={{marginTop: "80px"}}>
+    <Container className="text-center auth-cont">
       <Row>
         <Col lg={6} className="offset-lg-3 mt-5">
           <Card>
             <Form onSubmit={handleSubmit}>
-              <CardHeader className="text-center">Signup here</CardHeader>
+              <CardHeader className="text-center auth-card-header">Signup here</CardHeader>
               {/* {error && <Alert variant="danger">{error}</Alert>} */}
 
               <CardBody>
                 <FormGroup row className="mb-3">
-                  <Label for="email" sm={3}>
+                  <Label className="auth-label" for="email" sm={3}>
                     Email
                   </Label>
                   <Col sm={9}>
@@ -91,13 +93,13 @@ const Signup = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      // className="text-white"
+                      className="text-white"
 
                     />
                   </Col>
                 </FormGroup>
                 <FormGroup row className="mb-3">
-                  <Label for="password" sm={3}>
+                  <Label className="auth-label" for="password" sm={3}>
                     Password
                   </Label>
                   <Col sm={9}>
@@ -109,13 +111,13 @@ const Signup = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      // className="text-white"
+                      className="text-white"
 
                     />
                   </Col>
                 </FormGroup>
                 <FormGroup row className="mb-3">
-                  <Label for="confirmPassword" sm={3} className="text-center">
+                  <Label className="auth-label" for="confirmPassword" sm={3}>
                     Confirm Password
                   </Label>
                   <Col sm={9}>
@@ -127,14 +129,14 @@ const Signup = () => {
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       required
-                      // className="text-white"
+                      className="text-white"
 
                     />
                   </Col>
                 </FormGroup>
               </CardBody>
               <CardFooter>
-                <Button type="submit" block color="primary">
+                <Button type="submit" className="auth-btn">
                   Sign up
                 </Button>
               </CardFooter>
@@ -142,7 +144,7 @@ const Signup = () => {
           </Card>
         </Col>
         <div className="w-100 text-center mt-2">
-          Already have an account... <Link to="/signin" className="text-info">Sign in</Link>
+          Already have an account... <Link to="/signin" className="auth-link">Sign in</Link>
         </div>
       </Row>
     </Container>

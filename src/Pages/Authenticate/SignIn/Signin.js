@@ -19,6 +19,7 @@ import {UserContext} from "../../../context/UserContext"
 import {Redirect, Link}  from "react-router-dom";
 import {toast} from "react-toastify";
 import Footer from '../../../layout/Footer/Footer';
+import '../PasswordReset/forgotpassword.css'
 
 
 const Signin = () => {
@@ -66,15 +67,15 @@ const Signin = () => {
 
   return (
       <>
-    <Container className='text-center' style={{marginTop: "80px"}}>
+    <Container className='text-center auth-cont'>
         <Row>
             <Col lg={6} className='offset-lg-3 mt-5'>
                 <Card>
                     <Form onSubmit={handleSubmit}>
-                        <CardHeader >Signin here</CardHeader>
+                        <CardHeader className="auth-card-header" >Signin here</CardHeader>
                         <CardBody>
                             <FormGroup row className="mb-3">
-                                <Label for='email' sm={3} >
+                                <Label className="auth-label" for='email' sm={3} >
                                     Email
                                 </Label>
                                 <Col sm={9}>
@@ -86,12 +87,12 @@ const Signin = () => {
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         required
-                                        // className="text-white"
+                                        className="text-white"
                                     />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label for='password' sm={3}>
+                                <Label className="auth-label" for='password' sm={3}>
                                     Password
                                 </Label>
                                 <Col sm={9}>
@@ -103,25 +104,25 @@ const Signin = () => {
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                         required
-                                        // className="text-white"
+                                        className="text-white"
 
                                     />
                                 </Col>
                             </FormGroup>
                         </CardBody>
                         <CardFooter>
-                            <Button type='submit' block color='primary'>
+                            <Button type='submit' className="auth-btn">
                                 Sign In
                             </Button>
                         </CardFooter>
                     </Form>
                     <div className="w-100 text-center  p-3">
-                        <Link to="/forgot-password" className="text-info">Forgot Password?</Link>
+                        <Link to="/forgot-password" className="auth-link">Forgot Password?</Link>
                     </div>
                 </Card>
             </Col>
             <div className="w-100 text-center mt-2">
-                Need an account? <Link to="/signup" className="text-info">Sign up</Link>
+                Need an account? <Link to="/signup" className="auth-link">Sign up</Link>
             </div>
         </Row>
     </Container>

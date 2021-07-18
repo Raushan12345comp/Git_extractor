@@ -19,6 +19,8 @@ import {
 import { toast } from "react-toastify";
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from "../../../../context/UserContext";
+import cell from '../../../../img/cell.svg'
+
 
 const UserByCommits = () => {
   const context = useContext(UserContext);
@@ -47,23 +49,23 @@ const UserByCommits = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "80px" }}>
+      <Container style={{ marginTop: "50px", marginBottom: "100px" }}>
         <Row className=" mt-3">
-          <Col md="12">
+          <Col md="10">
             <InputGroup>
               <Input
                 type="text"
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Please Provide the username"
-                // className="text-white"
+                className="text-white"
               />
               <Input
                 type="text"
                 value={query2}
                 onChange={(e) => setQuery2(e.target.value)}
                 placeholder="Please Provide the repositories name"
-                // className="text-white"
+                className="text-white"
               />
 
               <Input
@@ -71,7 +73,7 @@ const UserByCommits = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 placeholder="Please Provide the date in yyyy-mm-day"
-                // className="text-white"
+                className="text-white"
               />
 
               <Input
@@ -79,10 +81,10 @@ const UserByCommits = () => {
                 value={toDate}
                 onChange={(e) => setToDate(e.target.value)}
                 placeholder="Please Provide the date in yyyy-mm-day"
-                // className="text-white"
+                className="text-white"
               />
               <InputGroupAddon addonType="append">
-                <Button onClick={fetchDetails} color="primary">
+                <Button onClick={fetchDetails} className="auth-btn">
                   Fetch User
                 </Button>
               </InputGroupAddon>
@@ -107,6 +109,7 @@ const UserByCommits = () => {
                             style={{ marginTop: "10px" }}
                             target="_blank"
                             href={element.author.html_url}
+                            style={{textDecoration: 'none'}}
                           >
                             <img
                               width="200"
@@ -115,19 +118,19 @@ const UserByCommits = () => {
                               src={element.author.avatar_url}
                             ></img>
                             <CardBody>
-                              <div className="text-info">
+                              <div className="auth-card-header">
                                 {element.author.login}
                               </div>
-                              <div className="text-info">
+                              <div className="auth-label">
                                 {element.commit.committer.date}
                               </div>
-                              <div className="text-info">
+                              <div className="auth-label">
                                 {element.commit.committer.email}
                               </div>
-                              <div className="text-info">
+                              <div className="auth-label">
                                 {element.commit.committer.name}
                               </div>
-                              <div className="text-info">
+                              <div className="auth-label">
                                 {element.commit.message}
                               </div>
                             </CardBody>
@@ -138,9 +141,12 @@ const UserByCommits = () => {
                   })}
                 </div>
               ) : (
-                <h1 className="text-white" style={{ marginTop: "130px" }}>
-                  Raushan Kumar
-                </h1>
+                <p
+                style={{ marginTop: "100px" , paddingLeft: "100px"}}
+                className="text-white text-center pt-20"
+              >
+                <img src={cell} height= "400vh"></img>
+              </p>
               )}
             </div>
           </div>

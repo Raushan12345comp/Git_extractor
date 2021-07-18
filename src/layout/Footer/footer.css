@@ -206,3 +206,18 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   }
  
 } */
+
+
+.icons {
+  margin-left: 30px;
+  font-size: 25px; 
+  color: blue;
+
+  clip-path: circle();
+}
+
+.icons:hover {
+  font-size: 30px;
+  color: #154360;
+
+}

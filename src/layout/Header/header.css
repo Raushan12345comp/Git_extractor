@@ -27,6 +27,24 @@
 
 
 .items {
-    margin: 20px !important;
+    margin: 10px !important;
+    color: #154360 !important;
+    font-family: cursive !important;
+    font-size: 18px !important;
 
+
+}
+
+.items:hover {
+    color: aliceblue !important;
+    font-size: 20px !important;
+
+
+
+    
+}
+
+#logout:hover {
+    color: red !important;
+    font-weight: 200 !important;
 }

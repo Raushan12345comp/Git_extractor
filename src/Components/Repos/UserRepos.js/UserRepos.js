@@ -43,16 +43,16 @@ const UserRepos = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "80px" }}>
+      <Container style={{ marginTop: "50px", marginBottom: '100px' }}>
         <Row className=" mt-3">
-          <Col md="12">
+          <Col md="10">
             <InputGroup>
               <Input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please provide the username"
-                // className="text-white"
+                className="text-white"
               />
 
               <Input
@@ -61,11 +61,11 @@ const UserRepos = () => {
                 value={page}
                 onChange={(e) => setPage(e.target.value)}
                 placeholder="Enter the page no."
-                // className="text-white"
+                className="text-white"
               />
 
               <InputGroupAddon addonType="append">
-                <Button onClick={fetchRepos} color="primary">
+                <Button onClick={fetchRepos} className="auth-btn">
                   Fetch Repos
                 </Button>
               </InputGroupAddon>
@@ -77,32 +77,32 @@ const UserRepos = () => {
             </a>
           </card> */}
 
-          <div style={{ marginBottom: "80px" }}>
+          <div style={{ marginBottom: "50px" }}>
             <ListGroup className="mb-10">
               {repos.map((repo) => (
               
                 <ListGroupItem key={repo.id}>
                 
-                  <a target="_blank" href={repo.html_url}>
-                    <div className="text-primary">{repo.name}</div>
+                  <a style={{textDecoration: 'none'}} target="_blank" href={repo.html_url}>
+                    <div className="auth-card-header">{repo.name}</div>
                   </a>
 
-                  <div className="text-secondary">{repo.language}</div>
-                  <div className="text-info">{repo.description}</div>
-                  <div className="text-info">Size: {repo.size}</div>
-                  <div className="text-info">
+                  <div className="auth-label">{repo.language}</div>
+                  <div className="auth-label">{repo.description}</div>
+                  <div className="auth-label">Size: {repo.size}</div>
+                  <div className="auth-label">
                     Open issues: {repo.open_issues}
                   </div>
-                  <div className="text-info">
+                  <div className="auth-label">
                     Default branch: {repo.default_branch}
                   </div>
-                  <div className="text-info">
+                  <div className="auth-label">
                     create date: {repo.created_at}
                   </div>
-                  <div className="text-info">
+                  <div className="auth-label">
                     update date: {repo.updated_at}
                   </div>
-                  <div className="text-info">
+                  <div className="auth-label">
                     pushed date: {repo.updated_at}
                   </div>
                 </ListGroupItem>

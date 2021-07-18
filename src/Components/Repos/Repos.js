@@ -30,18 +30,18 @@ export const Repos = ({repos_url}) => {
         <ListGroup>
             {repos.map(repo => (
                 <ListGroupItem key={repo.id}>
-                    <a target="_blank" href={repo.html_url}>
-                    <div className="text-primary">{repo.name}</div>
+                    <a style={{textDecoration: 'none'}} target="_blank" href={repo.html_url}>
+                    <div className="auth-card-header">{repo.name}</div>
                     </a>
 
-                    <div className="text-secondary">{repo.language}</div>
-                    <div className="text-info">{repo.description}</div>
-                    <div >Size: {repo.size}</div>
-                    <div >Open issues: {repo.open_issues}</div>
-                    <div >Default branch: {repo.default_branch}</div>
-                    <div>create date: {repo.created_at}</div>
-                    <div >update date: {repo.updated_at}</div>
-                    <div >pushed date: {repo.updated_at}</div>
+                    <div className="auth-label">{repo.language}</div>
+                    <div className="auth-label">{repo.description}</div>
+                    <div className='auth-label'>Size: {repo.size}</div>
+                    <div className='auth-label'>Open issues: {repo.open_issues}</div>
+                    <div className='auth-label'>Default branch: {repo.default_branch}</div>
+                    <div className='auth-label'>create date: {repo.created_at}</div>
+                    <div className='auth-label'>update date: {repo.updated_at}</div>
+                    <div className='auth-label'>pushed date: {repo.updated_at}</div>
                 </ListGroupItem>
             ))}
         </ListGroup>

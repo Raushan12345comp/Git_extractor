@@ -47,7 +47,7 @@ const Header = () => {
           ></img>
         </Link>
       </NavbarBrand>
-      <NavbarText className="text-white">{context.user?.email ? context.user.email : ""}</NavbarText>
+      <NavbarText style={{color: "#fff",fontFamily: 'cursive'}}>{context.user?.email ? context.user.email : ""}</NavbarText>
       <NavbarToggler className="toggle navbar-dark" type="button" onClick={toggle} />
       <Collapse  isOpen={isOpen} navbar>
         <Nav className="ms-auto items" navbar>
@@ -58,22 +58,24 @@ const Header = () => {
                   tag={Link}
                   to="/"
                   onClick={() => handleLogout(context.setUser(null))}
+                  className="items"
+                  id="logout"
                 >
                   Logout
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/about">
+                <NavLink  className="items" activeClassName="active_class" tag={Link} to="/about">
                   About
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/contact">
+                <NavLink className="items" tag={Link} to="/contact">
                   Contact
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/">
+                <NavLink className="items" tag={Link} to="/">
                   Home
                 </NavLink>
               </NavItem>
@@ -81,22 +83,22 @@ const Header = () => {
           ) : (
             <>
               <NavItem>
-                <NavLink tag={Link} to="/signup">
+                <NavLink className="items" tag={Link} to="/signup">
                   Signup
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/signin">
+                <NavLink className="items" tag={Link} to="/signin">
                   Signin
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/about">
+                <NavLink className="items" tag={Link} to="/about">
                   About
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/contact">
+                <NavLink className="items" tag={Link} to="/contact">
                   Contact
                 </NavLink>
               </NavItem>

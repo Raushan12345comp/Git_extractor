@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <>
-      <Container>
+      <Container style={{ marginTop: "50px" , marginBottom: "100px"}}>
         <Row className=" mt-3">
           <Col md="10">
             <InputGroup>
@@ -68,7 +68,7 @@ const Home = () => {
               />
 
               <InputGroupAddon addonType="append">
-                <Button onClick={fetchDetails} color="primary">
+                <Button onClick={fetchDetails} className="auth-btn">
                   Fetch User
                 </Button>
               </InputGroupAddon>
@@ -79,7 +79,7 @@ const Home = () => {
               <div>
               <Link to="repos">
               <CopyToClipboard text={user.login}>
-              <button  onClick={username}>view all repos</button>
+              <Button className="auth-btn" onClick={username}>view all repos</Button>
 
               </CopyToClipboard>
               </Link>

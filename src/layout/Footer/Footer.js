@@ -108,25 +108,28 @@ const Footer = () => {
       >
         Connect with us..
         <a
-          style={{ marginLeft: "30px", fontSize: "25px", color: "#154360"}}
           target="_blank"
           href="https://www.facebook.com/Git-Extractor-107399428283927"
         >
-          <FaFacebook />
+          <FaFacebook  className="icons"/>
         </a>
         <a
           target="_blank"
-          style={{ marginLeft: "30px", fontSize: "25px", color: "#154360" }}
+
           href="https://www.instagram.com/git_extractor/"
         >
-          <FaInstagramSquare />
+          <FaInstagramSquare 
+        className="icons"
+           />
         </a>
         <a
           target="_blank"
-          style={{ marginLeft: "30px", fontSize: "25px", color: "#154360" }}
+
           href="https://twitter.com/home"
         >
-          <FaTwitter />
+          <FaTwitter
+        className="icons"
+           />
         </a>
       </div>
       {/* <BackTop>
