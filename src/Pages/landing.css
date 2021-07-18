@@ -34,8 +34,10 @@
   
   .landing_links{
       font-size: 22px;
-      color:  black ;
-      font-family: 'Otomanopee One', sans-serif;
+    color: #154360;
+    font-family: cursive;
+      
+      text-decoration: none;
       
   }
   .landing_links:hover{
