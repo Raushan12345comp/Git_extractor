@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 import UserCard from "../../../Components/UserCard/UserCard";
 import { Repos } from "../../../Components/Repos/Repos";
 import { Link, Redirect } from "react-router-dom";
+import cell from '../../../img/cell.svg'
 // import firebase from "firebase/app";
 
 const Home = () => {
@@ -90,7 +91,7 @@ const Home = () => {
                 style={{ marginTop: "100px" }}
                 className="text-white text-center pt-20"
               >
-                Github Image... decide and create attractive design of github
+                <img src={cell} height= "400vh"></img>
               </p>
             )}
           </Col>

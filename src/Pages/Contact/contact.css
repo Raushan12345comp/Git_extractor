@@ -1,6 +1,4 @@
-#contact {
-    /* margin-left: 300px; */
-  /* background-color: rgb(59, 50, 50); */
+/* #contact {
   width: auto;
   height: auto;
   padding-bottom: 100px;
@@ -9,7 +7,6 @@
 
 @media (max-width:1199px) {
     #contact {
-        /* margin-left: 0; */
     }
 }
 
@@ -17,7 +14,6 @@
     width: 100%;
     padding: 60px;
     margin-bottom: 0;
-    /* color: rgb(235, 223, 223); */
 }
 
 .contact-title {
@@ -32,14 +28,11 @@
 
 .contact-flex {
     
-    /* background-color: blue; */
     display: flex;
     padding: 20px;
     margin: 10px;
-    /* border: 2px solid red; */
     flex-direction: row;
     flex-wrap: wrap;
-    /* align-items: center; */
     justify-content: center;
 }
 
@@ -48,9 +41,7 @@
     display:block;
     border: double;
     border-radius: 5px;
-    /* background-color: red; */
     width: 400px;
-    /* height: 600px; */
     padding-bottom: 10px;
 }
 
@@ -59,18 +50,13 @@
 .form {
     border: double;
     border-radius: 5px;
-     /* margin: 10px; */
     padding: 50px;
-    /* background-color: blue; */
     width: 400px;
-    /* height: 600px; */
-    /* color: rgb(235, 223, 223); */
 }
 
 .form-control {
     background: rgb(235, 223, 223);
     font-size: 16px;
-    /* color: rgb(235, 223, 223); */
 }
 
 
@@ -81,25 +67,18 @@
 
 .info {
     padding: 30px;
-    /* background: red; */
-    /* color: rgb(235, 223, 223); */
     
 }
 
 .call {
     padding: 30px;
-    /* background: red; */
-    /* color: rgb(235, 223, 223); */
 }
 
 .email {
     padding: 30px;
-    /* background: red; */
-    /* color: rgb(235, 223, 223); */
 }
 .icon {
     font-size: 20px;
-    /* color: rgb(235, 223, 223); */
     float: left;
     width: 40px;
     height: 40px;
@@ -108,23 +87,17 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    /* background: blue; */
     transition: all 0.3s ease-in-out;
     margin-right: 10px;
     border: 2px solid red;
     border-radius: 10px;
-    /* cursor: pointer;  */
     padding: 4px;
 
     font-size: 20px;
 }
 
 .contact-details :hover {
-    /* background: tomato; */
-    /* padding: 0; */
     color: tomato;
-    /* font-size: 30px; */
-    /* padding: 0; */
 
 }
 
@@ -150,8 +123,6 @@
 
 .label {
     padding-bottom: 20px;
-    /* margin: 10px; */
-    /* font-size: 16px; */
 }
 
 input {
@@ -178,7 +149,6 @@ textarea {
     cursor: pointer;
     font-size: 16px;
     background-color:rgb(211, 219, 211);
-    /* color: rgb(235, 223, 223); */
     border-radius: 10px;
 }
 
@@ -187,10 +157,8 @@ textarea {
 
     margin-left: 10px;
     padding: 10px;
-    /* margin-left: 15px; */
-    /* margin-bottom: 20px; */
 
    align-items: center;
    text-align: center;
 
-}
+} */

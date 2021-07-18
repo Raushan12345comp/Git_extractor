@@ -72,6 +72,11 @@ const Header = () => {
                   Contact
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/">
+                  Home
+                </NavLink>
+              </NavItem>
             </>
           ) : (
             <>
