@@ -26,9 +26,11 @@ const Contributor = () => {
   const [query1, setQuery1] = useState("");
   const [query2, setQuery2] = useState("");
   const [user, setUser] = useState(null);
+  const [date, setDate] = useState(null);
+  const [toDate, setToDate] = useState(null);
 
   const fetchDetails = async () => {
-    const url = `https://api.github.com/repos/${query1}/${query2}/stats/contributors`;
+    const url = `https://api.github.com/repos/${query1}/${query2}/stats/contributors?since=${date} to=${toDate}`;
 
     try {
       const { data } = await Axios.get(url);
@@ -71,6 +73,21 @@ const Contributor = () => {
                 placeholder="Please Provide the date in yyyy-mm-day"
                 className="text-white"
               /> */}
+              <Input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                placeholder="Please select the date"
+                // className="text-white"
+              />
+
+              <Input
+                type="date"
+                value={toDate}
+                onChange={(e) => setToDate(e.target.value)}
+                placeholder="Please select the date"
+                // className="text-white"
+              />
 
               <InputGroupAddon addonType="append">
                 <Button onClick={fetchDetails} color="primary">

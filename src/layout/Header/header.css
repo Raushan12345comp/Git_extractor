@@ -1,0 +1,32 @@
+
+
+/* .navbar {
+    display: flex;
+    flex-direction: row;
+} */
+
+.logo {
+    padding: 2px;
+    margin-left: 20px;
+}
+
+
+.toggle {
+    background-image: url('../../lgo.png');
+    clip-path:circle() !important;
+    margin-right: 20px;
+    /* color: whitesmoke !important; */
+    /* background-attachment: fixed !important; */
+    /* background-repeat: no-repeat; */
+/* background-position: top left; */
+/* /* background-color: red !important; */
+
+    
+
+}
+
+
+.items {
+    margin: 20px !important;
+
+}

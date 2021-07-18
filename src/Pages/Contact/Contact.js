@@ -1,6 +1,6 @@
 import React from 'react';
-import { MdEmail, MdLocationOn, MdPhoneAndroid } from 'react-icons/md';
-import './contact.css';
+import { MdEmail, MdPhoneAndroid } from 'react-icons/md';
+// import './contact.css';
 
 
 

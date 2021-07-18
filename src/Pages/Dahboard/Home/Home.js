@@ -54,9 +54,9 @@ const Home = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "80px" }}>
+      <Container>
         <Row className=" mt-3">
-          <Col md="5">
+          <Col md="10">
             <InputGroup>
               <Input
                 type="text"
@@ -94,7 +94,7 @@ const Home = () => {
               </p>
             )}
           </Col>
-          <Col md="7">
+          <Col md="10">
             {user ? (
               <Repos repos_url={user.repos_url} />
             ) : (null)}
