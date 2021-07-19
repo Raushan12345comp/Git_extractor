@@ -79,7 +79,7 @@ const Home = () => {
               <div>
               <Link to="repos">
               <CopyToClipboard text={user.login}>
-              <Button className="auth-btn" onClick={username}>view all repos</Button>
+              <Button className="auth-btn" style={{marginBottom: "20px"}} onClick={username}>view all repos</Button>
 
               </CopyToClipboard>
               </Link>

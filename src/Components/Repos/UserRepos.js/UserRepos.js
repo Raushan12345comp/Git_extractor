@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import { UserContext } from "../../../context/UserContext";
 import { Redirect } from "react-router-dom";
+import cell from '../../../img/cell.svg'
 
 const UserRepos = () => {
 
@@ -76,9 +77,10 @@ const UserRepos = () => {
               <img src={repos.owner} className="img-thumbnail" />
             </a>
           </card> */}
-
-          <div style={{ marginBottom: "50px" }}>
-            <ListGroup className="mb-10">
+          
+          <Col md='10'  style={{ marginBottom: "50px", marginTop: "20px"}}>
+          {repos? (
+            <ListGroup style={{}}>
               {repos.map((repo) => (
               
                 <ListGroupItem key={repo.id}>
@@ -108,7 +110,17 @@ const UserRepos = () => {
                 </ListGroupItem>
               ))}
             </ListGroup>
-          </div>
+            
+            ) : (
+              <p
+                style={{ marginTop: "100px" , paddingLeft: "100px"}}
+                className="text-white text-center pt-20"
+              >
+                <img src={cell} height= "400vh"></img>
+              </p>
+            )}
+            
+          </Col>
         </Row>
       </Container>
     </>
