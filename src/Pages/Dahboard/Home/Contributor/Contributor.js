@@ -101,7 +101,7 @@ const Contributor = () => {
           <div>
             <div style={{ display: "flex" }}>
               {user ? (
-                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", justifyContent: 'center' }}>
                   {user.map((element, index) => {
                     return (
                       <div className="text-center mt-3 mb-4">

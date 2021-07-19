@@ -78,9 +78,9 @@ const UserRepos = () => {
             </a>
           </card> */}
           
-          <Col md='10'  style={{ marginBottom: "50px", marginTop: "20px"}}>
+          <Col md='10'  style={{ marginBottom: "50px", marginTop: "20px",}}>
           {repos? (
-            <ListGroup style={{}}>
+            <ListGroup >
               {repos.map((repo) => (
               
                 <ListGroupItem key={repo.id}>
