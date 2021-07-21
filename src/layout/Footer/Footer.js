@@ -97,6 +97,7 @@ const Footer = () => {
       fluid
       tag="footer"
       className="text-center text-uppercase fixed-bottom p-3"
+      style={{backgroundColor: '#f5f5f5'}}
     >
       <div
         style={{
