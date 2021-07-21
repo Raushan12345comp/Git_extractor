@@ -149,7 +149,7 @@ const UserByRepos = () => {
           </div>
         </Row>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
