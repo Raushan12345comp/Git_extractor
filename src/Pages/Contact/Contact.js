@@ -148,7 +148,7 @@ const Contact = () => {
                         type="email"
                         name="email"
                         placeholder="Enter your email"
-                        className="text-white"
+                        // className="text-white"
                         placeholder="Enter your Email"
                         required
                       />
