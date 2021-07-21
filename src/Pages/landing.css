@@ -12,6 +12,10 @@
     background-size: cover;
     background-image: url("../img/Pink\ and\ Violet\ Simple\ Hot\ Neons\ Gradients\ Creative\ Presentation.png");
   } */
+
+  body {
+    background: #f5f5f5;
+  }
   
  
   .link_box{

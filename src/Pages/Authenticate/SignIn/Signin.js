@@ -87,7 +87,7 @@ const Signin = () => {
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         required
-                                        className="text-white"
+                                        // className="text-white"
                                     />
                                 </Col>
                             </FormGroup>
@@ -104,7 +104,7 @@ const Signin = () => {
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                         required
-                                        className="text-white"
+                                        // className="text-white"
 
                                     />
                                 </Col>

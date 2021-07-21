@@ -63,7 +63,7 @@ const UserByRepos = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please Provide the repos language"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
@@ -73,7 +73,7 @@ const UserByRepos = () => {
                 value={page}
                 onChange={(e) => setPage(e.target.value)}
                 placeholder="Enter the page no."
-                className="text-white"
+                // className="text-white"
               />
 
               <InputGroupAddon addonType="append">

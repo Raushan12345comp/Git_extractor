@@ -93,7 +93,7 @@ const Signup = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="text-white"
+                      // className="text-white"
 
                     />
                   </Col>
@@ -111,7 +111,7 @@ const Signup = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      className="text-white"
+                      // className="text-white"
 
                     />
                   </Col>
@@ -129,7 +129,7 @@ const Signup = () => {
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       required
-                      className="text-white"
+                      // className="text-white"
 
                     />
                   </Col>

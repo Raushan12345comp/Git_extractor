@@ -31,9 +31,9 @@ const Header = () => {
     <Navbar
       className="fixed-top"
       sticky='top'
-      light
       expand="md"
       className="navbar"
+      style={{backgroundColor: "#f5f5f5"}}
 
     >
       <NavbarBrand>
@@ -42,13 +42,14 @@ const Header = () => {
             className="logo"
             style={{ clipPath: "circle()" }}
             width="80px"
+            dark
             height="80px"
             src="Images/gif.gif"
           ></img>
         </Link>
       </NavbarBrand>
-      <NavbarText style={{color: "#fff",fontFamily: 'cursive'}}>{context.user?.email ? context.user.email : ""}</NavbarText>
-      <NavbarToggler className="toggle navbar-dark" type="button" onClick={toggle} />
+      <NavbarText  style={{color: "#000",fontFamily: 'cursive'}}>{context.user?.email ? context.user.email : ""}</NavbarText>
+      <NavbarToggler  className="toggle navbar-dark"  type="button" onClick={toggle} />
       <Collapse  isOpen={isOpen} navbar>
         <Nav className="ms-auto items" navbar>
           {context.user ? (

@@ -13,6 +13,7 @@
 
 .toggle {
     background-image: url('../../lgo.png');
+    /* background: none !important; */
     clip-path:circle() !important;
     margin-right: 20px;
     /* color: whitesmoke !important; */
@@ -29,6 +30,7 @@
 .items {
     margin: 10px !important;
     color: #154360 !important;
+    /* color: white !important; */
     font-family: cursive !important;
     font-size: 18px !important;
 
@@ -36,7 +38,8 @@
 }
 
 .items:hover {
-    color: aliceblue !important;
+    /* color: aliceblue !important; */
+    color: rgb(153, 128, 95);
     font-size: 20px !important;
 
 

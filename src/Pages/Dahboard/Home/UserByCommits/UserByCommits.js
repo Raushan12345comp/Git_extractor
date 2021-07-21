@@ -58,14 +58,14 @@ const UserByCommits = () => {
                 value={query1}
                 onChange={(e) => setQuery1(e.target.value)}
                 placeholder="Please Provide the username"
-                className="text-white"
+                // className="text-white"
               />
               <Input
                 type="text"
                 value={query2}
                 onChange={(e) => setQuery2(e.target.value)}
                 placeholder="Please Provide the repositories name"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
@@ -73,7 +73,7 @@ const UserByCommits = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 placeholder="Please Provide the date in yyyy-mm-day"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
@@ -81,7 +81,7 @@ const UserByCommits = () => {
                 value={toDate}
                 onChange={(e) => setToDate(e.target.value)}
                 placeholder="Please Provide the date in yyyy-mm-day"
-                className="text-white"
+                // className="text-white"
               />
               <InputGroupAddon addonType="append">
                 <Button onClick={fetchDetails} className="auth-btn">

@@ -44,7 +44,7 @@ const UserRepos = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "50px", marginBottom: '100px' }}>
+      <Container style={{background: '#f5f5f5', marginTop: "50px", marginBottom: '100px' }}>
         <Row className=" mt-3">
           <Col md="10">
             <InputGroup>
@@ -53,7 +53,7 @@ const UserRepos = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Please provide the username"
-                className="text-white"
+                // className="text-white"
               />
 
               <Input
@@ -62,7 +62,7 @@ const UserRepos = () => {
                 value={page}
                 onChange={(e) => setPage(e.target.value)}
                 placeholder="Enter the page no."
-                className="text-white"
+                // className="text-white"
               />
 
               <InputGroupAddon addonType="append">

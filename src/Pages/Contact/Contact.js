@@ -135,7 +135,7 @@ const Contact = () => {
                         name="name"
                         placeholder="Enter your name"
                         required
-                        className="text-white"
+                        // className="text-white"
                       />
                     </Col>
                   </FormGroup>
@@ -167,7 +167,7 @@ const Contact = () => {
 
                         placeholder="Type your Message"
                         required
-                        className="text-white"
+                        // className="text-white"
                       />
                     </Col>
                   </FormGroup>
