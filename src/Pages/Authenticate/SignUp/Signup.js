@@ -47,7 +47,9 @@ const Signup = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+
       .then((res) => {
+
         console.log(res);
         context.setUser({ email: res.user.email, uid: res.user.uid });
         success()
@@ -58,6 +60,7 @@ const Signup = () => {
           type: "error",
         });
       });
+
   };
 
   const handleSubmit = (e) => {
@@ -143,7 +146,7 @@ const Signup = () => {
             </Form>
           </Card>
         </Col>
-        <div className="w-100 text-center mt-2">
+        <div className="w-100 text-center mt-2" style={{color: 'black'}}>
           Already have an account... <Link to="/signin" className="auth-link">Sign in</Link>
         </div>
       </Row>

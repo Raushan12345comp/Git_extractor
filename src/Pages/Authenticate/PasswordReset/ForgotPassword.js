@@ -88,7 +88,7 @@ const ForgotPassword = () => {
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         required
-                                        className="text-white"
+                                        // className="text-white"
 
                                     />
                                 </Col>
@@ -105,8 +105,8 @@ const ForgotPassword = () => {
                     </div>
                 </Card>
             </Col>
-            <div className="w-100 text-center mt-2">
-                Need an account? <Link to="/signup" className='auth-link'>Sign up</Link>
+            <div className="w-100  text-center mt-2" style={{color: 'black'}}>
+               Need an account? <Link to="/signup" className='auth-link'>Sign up</Link>
             </div>
         </Row>
     </Container>

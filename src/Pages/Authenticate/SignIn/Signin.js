@@ -121,7 +121,7 @@ const Signin = () => {
                     </div>
                 </Card>
             </Col>
-            <div className="w-100 text-center mt-2">
+            <div className="text-center mt-2" style={{color: 'black'}}>
                 Need an account? <Link to="/signup" className="auth-link">Sign up</Link>
             </div>
         </Row>
